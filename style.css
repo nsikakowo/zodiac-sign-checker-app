@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.zodiac-details{
+    width:100%;
+    max-width:60vw;
+    text-align: center;
+    display: none;
+}
+
+.zodiac-details img {
+    width: 50%;
+}
+
+
+/* Start Media Query */
+@media screen and (min-width:500px) {
+    .zodiac-details img {
+        width: 20%;
+    }
+}
+
+/* End Media */
+
+.zodiac-details h1 {
+    font-size: 40px;
+    margin: 5xp;
+   
+}
+
+.zodiac-details button {
+  padding: 10px;
+    margin-top: 15px;
+    border: 2px dashed #000;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .8s;
+}
+
+.zodiac-details button:hover {
+    transform: scale(1.1);
+    border: 2px solid #000;
+}
+
+/* Zodiac form styles */
+.zodiac-form {
+    padding: 20px;
+    width: 100%;
+    max-width: 60vw;
+    border-radius: 5px;
+    box-shadow: 2px 2px 18px #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.zodiac-form form{
+    align-self: flex-start;
+    margin: 20px 0;
+    border: 2px dashed #ccc;
+    border-radius: 50px;
+    width: 100%;
+    height: 40px;
+    /* overflow: hidden; */
+    position: relative;
+    
+}
+
+.zodiac-form form::before {
+    content: "Enter Your Birthday";
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    font-size: 12px;
+    
+}
+
+.zodiac-form form input {
+    width: 90%;
+    height: 100%;
+    padding: 10px 10px 10px 15px;
+    border: none;
+    outline: none;
+}
+
+.zodiac-form form button{
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 1px;
+    padding: 0px 15px;
+    cursor: pointer;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transition: .5s;
+}
+
+.zodiac-form form button:hover{
+    background-color: #aaa;
+    color: #000;
+}
+
+/* Animated Classes */
+.animate-details-out{
+    animation-name: animateDetailsOut ;
+    animation-duration: 1s; 
+    animation-fill-mode: forwards;
+}
+
+.animate-details-in{
+    animation-name: animateDetailsIn ;
+    animation-duration: 1s; 
+    animation-fill-mode: forwards;
+}
+
+.animate-form-out{
+    animation-name: animateFormOut ;
+    animation-duration: 1s; 
+    animation-fill-mode: forwards;
+}
+
+.animate-form-in{
+    animation-name: animateFormIn ;
+    animation-duration: 1s; 
+    animation-fill-mode: forwards;
+}
+
+@keyframes animateDetailsOut {
+    from{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes animateDetailsIn {
+    from{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes animateFormOut {
+    from{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes animateFormIn {
+    from{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
